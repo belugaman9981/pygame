@@ -2,75 +2,50 @@ import pygame
 
 pygame.init()
 
-user_input_speed = int(int(input("Speed (1 to 10)? "))) * 6
+speed = int(input("Speed (1 to 10)? ")) * 6
+direction = input("X, Y, or Both? ").lower()
 
-user_input_cords = input("X or Y or Both? ")
+x = 30
+y = 30
 
-
-
-
-class LocationNonsense:
+if direction == "x":
+    x = int(input("Where to start X level? "))
     
-    def X(self):
-        
-        # X
-        if user_input_cords == "X":
-            x = int(input("Where to start X level? "))
-            
-        else:
-            x = 30
-            
-            
-    def Y(self):
-            
-        # Y
-        if user_input_cords == "Y":
-            y = int(input("Where to start Y level? "))
-            
-        else:
-            y = 30
-            
-            
-    def Both(self):
-        
-        # both
-        if user_input_cords == "both" or "Both":
-            x = int(input("Where to start X level? "))
-            y = int(input("Where to start Y level? "))
-        
-        
-
+elif direction == "y":
+    y = int(input("Where to start Y level? "))
+    
+elif direction == "both":
+    x = int(input("Where to start X level? "))
+    y = int(input("Where to start Y level? "))
 
 screen = pygame.display.set_mode((640, 640))
 
 potato_image = pygame.image.load("potato.png").convert_alpha()
+potato_image = pygame.transform.scale(potato_image, (50, 50))
 
-new_width  = 50
-new_height = 50
 
-potato_image = pygame.transform.scale(potato_image, (new_width, new_height))
-
-running = True
-x = LocationNonsense.X
-y = LocationNonsense.Y
 clock = pygame.time.Clock()
-
+running = True
 deltaT = .1
 
 while running:
-    
-    screen.blit(potato_image, (x, y))
-    
-    x += 50 * deltaT
-    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-            
-    pygame.display.flip()
-    
-    clock.tick(user_input_speed)
 
+    if direction == "x":
+        x += 50 * deltaT
+        
+    elif direction == "y":
+        y += 50 * deltaT
+        
+    elif direction == "both":
+        x += 50 * deltaT
+        y += 50 * deltaT
+
+    screen.fill((0, 0, 0))
+    screen.blit(potato_image, (x, y))
+    pygame.display.flip()
+    clock.tick(speed)
 
 pygame.quit()
-
