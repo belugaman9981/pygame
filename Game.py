@@ -4,7 +4,17 @@ pygame.init()
 
 user_input_speed = int(int(input("Speed (1 to 10)? "))) * 6
 
-user_input_cords = input()
+user_input_cords = input("X or Y or Both? ")
+
+
+
+
+class:
+    if user_input_cords == "X":
+        x = int(input("Where to start/X level? "))
+        
+    else:
+        x = 30
 
 screen = pygame.display.set_mode((640, 640))
 
