@@ -10,11 +10,13 @@ running = True
 x = 30
 clock = pygame.time.Clock()
 
+deltaT = .1
+
 while running:
     
     screen.blit(potato_image, (x, 30))
     
-    x+=1
+    x += 50 * deltaT
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
