@@ -2,6 +2,10 @@ import pygame
 
 pygame.init()
 
+user_input_speed = int(int(input("Speed (1 to 10)? "))) * 6
+
+user_input_cords = input()
+
 screen = pygame.display.set_mode((640, 640))
 
 potato_image = pygame.image.load("potato.png").convert_alpha()
@@ -9,7 +13,7 @@ potato_image = pygame.image.load("potato.png").convert_alpha()
 new_width  = 50
 new_height = 50
 
-potato_image = potato_image.pygame.transform.scale(potato_image, (new_width, new_height))
+potato_image = pygame.transform.scale(potato_image, (new_width, new_height))
 
 running = True
 x = 30
@@ -19,7 +23,7 @@ deltaT = .1
 
 while running:
     
-    screen.blit(potato_image, (100, 100))
+    screen.blit(potato_image, (x, 100))
     
     x += 50 * deltaT
     
@@ -29,7 +33,7 @@ while running:
             
     pygame.display.flip()
     
-    clock.tick(60)
+    clock.tick(user_input_speed)
 
 
 pygame.quit()
