@@ -51,14 +51,15 @@ new_height = 50
 potato_image = pygame.transform.scale(potato_image, (new_width, new_height))
 
 running = True
-x = X
+x = LocationNonsense.X
+y = LocationNonsense.Y
 clock = pygame.time.Clock()
 
 deltaT = .1
 
 while running:
     
-    screen.blit(potato_image, (x, 100))
+    screen.blit(potato_image, (x, y))
     
     x += 50 * deltaT
     
