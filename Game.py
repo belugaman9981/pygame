@@ -11,7 +11,7 @@ user_input_cords = input("X or Y or Both? ")
 
 class LocationNonsense:
     
-    def XY(self):
+    def X(self):
         
         # X
         if user_input_cords == "X":
@@ -20,6 +20,9 @@ class LocationNonsense:
         else:
             x = 30
             
+            
+    def Y(self):
+            
         # Y
         if user_input_cords == "Y":
             y = int(input("Where to start Y level? "))
@@ -27,6 +30,9 @@ class LocationNonsense:
         else:
             y = 30
             
+            
+    def Both(self):
+        
         # both
         if user_input_cords == "both" or "Both":
             x = int(input("Where to start X level? "))
