@@ -6,14 +6,10 @@ screen = pygame.display.set_mode((640, 640))
 
 potato_image = pygame.image.load("potato.png").convert_alpha()
 
-potato_image = pygame.transform.scale(
-    potato_image,
-    (
-        potato_image.get_width() // 2,
-        potato_image.get_height() // 2
-    )
-)
+new_width  = 50
+new_height = 50
 
+potato_image = potato_image.pygame.transform.scale(potato_image, (new_width, new_height))
 
 running = True
 x = 30
