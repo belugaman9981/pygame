@@ -9,12 +9,31 @@ user_input_cords = input("X or Y or Both? ")
 
 
 
-class:
-    if user_input_cords == "X":
-        x = int(input("Where to start/X level? "))
+class LocationNonsense:
+    
+    def XY(self):
         
-    else:
-        x = 30
+        # X
+        if user_input_cords == "X":
+            x = int(input("Where to start X level? "))
+            
+        else:
+            x = 30
+            
+        # Y
+        if user_input_cords == "Y":
+            y = int(input("Where to start Y level? "))
+            
+        else:
+            y = 30
+            
+        # both
+        if user_input_cords == "both" or "Both":
+            x = int(input("Where to start X level? "))
+            y = int(input("Where to start Y level? "))
+        
+        
+
 
 screen = pygame.display.set_mode((640, 640))
 
@@ -26,7 +45,7 @@ new_height = 50
 potato_image = pygame.transform.scale(potato_image, (new_width, new_height))
 
 running = True
-x = 30
+x = X
 clock = pygame.time.Clock()
 
 deltaT = .1
