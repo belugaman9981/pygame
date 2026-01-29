@@ -8,6 +8,8 @@ potato_image = pygame.image.load("potato.png").convert()
 
 running = True
 x = 30
+clock = pygame.time.Clock()
+
 while running:
     
     screen.blit(potato_image, (x, 30))
@@ -19,6 +21,8 @@ while running:
             running = False
             
     pygame.display.flip()
+    
+    clock.tick(60)
 
 
 pygame.quit()
