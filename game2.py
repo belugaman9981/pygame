@@ -1,4 +1,6 @@
 import pygame
+from ursina import *
+from ursina.prefabs.first_person_controller import FirstPersonController
 
 pygame.init()
 
@@ -22,4 +24,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+            
+    pygame.draw.
             
