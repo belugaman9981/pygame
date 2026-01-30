@@ -23,8 +23,3 @@ while running:
         if event.type == pygame.QUIT:
             running = False
             
-    pygame.draw.circle(window, (255, 0, 0), (x, y), width // 2)
-    pygame.display.update()
-            
-pygame.quit()
-            
