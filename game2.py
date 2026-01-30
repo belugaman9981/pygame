@@ -11,15 +11,6 @@ window.fps_counter.enabled  = True
 
 Sky(color= color.cyan)
 
-ground = Entity(
-    model='plane',
-    scale=500,
-    texture='white_cube',
-    texture_scale=(100, 100),
-    color=color.rgb(170, 80, 50),
-    collider='box'
-)
-
 player = FirstPersonController(
     y=2,
     speed=6,
